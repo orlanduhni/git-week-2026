@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2º GIT WEEK 2026 - Construyendo Oportunidades</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=League+Spartan:wght@600;700&family=Poppins:wght@400;500&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --guinda:#7A1B2C;
+    --guinda-dark:#5A1220;
+    --dorado:#C9A24B;
+    --crema:#F4EFE3;
+    --crema-2:#FBF8F1;
+    --azul:#1D4E89;
+    --azul-dark:#0B2545;
+    --negro:#1A1A1A;
+    --texto-secundario:#5C5850;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Poppins',sans-serif;
+    background:var(--crema);
+    color:var(--negro);
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Barlow Semi Condensed',sans-serif;font-weight:700;letter-spacing:0.5px;}
+  .subtitulo{font-family:'League Spartan',sans-serif;font-weight:600;}
+  .textura{font-family:'Quicksand',sans-serif;}
+
+  /* ===== NAV ===== */
+  nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:16px 40px;background:var(--crema-2);
+    border-bottom:1px solid rgba(122,27,43,0.15);
+    position:sticky;top:0;z-index:100;
+  }
+  .nav-logos{display:flex;align-items:center;gap:16px;}
+  .nav-logos img{height:42px;}
+  .nav-links{display:flex;gap:28px;list-style:none;}
+  .nav-links a{
+    text-decoration:none;color:var(--negro);font-size:15px;font-weight:500;
+    transition:color 0.2s;
+  }
+  .nav-links a:hover{color:var(--guinda);}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, var(--crema-2) 0%, var(--crema) 100%);
+    padding:70px 40px 90px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero-badge{
+    display:inline-block;background:var(--guinda);color:var(--crema-2);
+    padding:6px 18px;border-radius:20px;font-size:13px;font-weight:600;
+    margin-bottom:24px;letter-spacing:1px;
+  }
+  .hero h1{
+    font-size:64px;color:var(--guinda);line-height:1;margin-bottom:8px;
+  }
+  .hero h1 span{color:var(--azul);}
+  .hero p.lema{
+    font-family:'League Spartan',sans-serif;font-weight:600;
+    font-size:20px;color:var(--azul-dark);margin:16px 0 8px;
+    text-transform:uppercase;letter-spacing:1px;
+  }
+  .hero p.desc{
+    max-width:560px;margin:0 auto 32px;color:var(--texto-secundario);font-size:16px;
+  }
+  .hero-mascota{
+    width:280px;margin:0 auto 24px;
+  }
+  .hero-mascota img{width:100%;display:block;}
+
+  .countdown{
+    display:flex;justify-content:center;gap:20px;margin:36px 0 40px;flex-wrap:wrap;
+  }
+  .countdown .item{
+    background:var(--crema-2);border:1px solid rgba(122,27,43,0.2);
+    border-radius:12px;padding:16px 22px;min-width:80px;
+  }
+  .countdown .num{font-size:34px;font-weight:700;color:var(--guinda);font-family:'Barlow Semi Condensed',sans-serif;}
+  .countdown .label{font-size:12px;color:var(--texto-secundario);text-transform:uppercase;letter-spacing:1px;}
+
+  .btn-primario{
+    display:inline-block;background:var(--azul);color:#fff;
+    padding:14px 36px;border-radius:8px;text-decoration:none;
+    font-weight:600;font-size:16px;transition:background 0.2s;
+  }
+  .btn-primario:hover{background:var(--azul-dark);}
+
+  /* ===== SECCIÓN GENERICA ===== */
+  section{padding:70px 40px;max-width:1100px;margin:0 auto;}
+  .section-eyebrow{
+    color:var(--azul);font-weight:600;font-size:13px;letter-spacing:2px;
+    text-transform:uppercase;margin-bottom:8px;
+  }
+  section h2{font-size:38px;color:var(--guinda);margin-bottom:16px;}
+  section > p.section-desc{color:var(--texto-secundario);max-width:640px;margin-bottom:40px;}
+
+  /* ===== QUÉ ES GIT ===== */
+  .ejes-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  }
+  .eje-card{
+    background:var(--crema-2);border:1px solid rgba(122,27,43,0.12);
+    border-radius:14px;padding:26px 20px;text-align:center;
+    display:flex;flex-direction:column;
+  }
+  .eje-icono-box{
+    height:130px;display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .eje-card .icono{
+    max-width:64px;max-height:64px;width:auto;height:auto;
+    object-fit:contain;
+  }
+  .eje-card .icono.icono-md{
+    max-width:82px;max-height:82px;
+  }
+  .eje-card .icono.icono-grande{
+    max-width:120px;max-height:120px;
+  }
+  .eje-card div.icono{
+    width:48px;height:48px;background:var(--azul);border-radius:10px;
+  }
+  .eje-card h3{font-size:18px;color:var(--azul-dark);margin-bottom:6px;}
+  .eje-card p{font-size:14px;color:var(--texto-secundario);}
+
+  .video-institucional{
+    margin-top:50px;background:var(--crema-2);border-radius:14px;
+    padding:30px;border:1px dashed rgba(122,27,43,0.3);
+  }
+  .video-institucional h3{font-size:18px;color:var(--guinda);margin-bottom:12px;}
+  .video-placeholder{
+    /* AQUÍ VA EL VIDEO INSTITUCIONAL (link de Drive o YouTube embed), borra las comillas y pega el iframe o link */
+    width:100%;aspect-ratio:16/9;background:var(--azul-dark);
+    border-radius:10px;display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:14px;text-align:center;padding:20px;
+  }
+
+  /* ===== CRONOGRAMA ===== */
+  .cronograma-dias{display:flex;gap:14px;margin-bottom:30px;flex-wrap:wrap;}
+  .dia-tab{
+    padding:10px 24px;border-radius:8px;background:var(--crema-2);
+    border:1px solid rgba(122,27,43,0.2);font-weight:600;font-size:14px;cursor:pointer;
+  }
+  .dia-tab.activo{background:var(--guinda);color:#fff;border-color:var(--guinda);}
+  .actividad-row{
+    display:flex;justify-content:space-between;align-items:center;
+    background:var(--crema-2);border-radius:10px;padding:16px 20px;margin-bottom:10px;
+    border-left:4px solid var(--azul);
+  }
+  .cronograma-bloque{margin-bottom:36px;}
+  .bloque-titulo{
+    font-size:16px;color:var(--azul);text-transform:uppercase;
+    letter-spacing:1px;margin-bottom:14px;font-family:'League Spartan',sans-serif;
+    border-left:3px solid var(--dorado);padding-left:12px;
+  }
+  .cronograma-lista:empty::after{
+    content:"Sin actividades programadas en este bloque para este día.";
+    display:block;color:var(--texto-secundario);font-size:13px;padding:14px 20px;
+  }
+  .actividad-row .hora{font-weight:600;color:var(--azul-dark);min-width:110px;font-size:14px;}
+  .actividad-row .nombre{flex:1;font-size:15px;}
+  .badge-plan{
+    font-size:11px;font-weight:600;padding:5px 12px;border-radius:14px;
+    text-transform:uppercase;letter-spacing:0.5px;
+  }
+  .badge-libre{background:#DCE9DC;color:#2E5E2E;}
+  .badge-normal{background:#D7E4F2;color:#1D4E89;}
+  .badge-premium{background:#F3E4C0;color:#8A6D1A;}
+
+  /* ===== PONENTES / SPONSORS - FLIP CARDS ===== */
+  .cards-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .flip-card{background:transparent;perspective:1000px;height:280px;}
+  .flip-card-inner{
+    position:relative;width:100%;height:100%;text-align:center;
+    transition:transform 0.6s;transform-style:preserve-3d;cursor:pointer;
+  }
+  .flip-card:hover .flip-card-inner{transform:rotateY(180deg);}
+  .flip-card-front,.flip-card-back{
+    position:absolute;width:100%;height:100%;-webkit-backface-visibility:hidden;
+    backface-visibility:hidden;border-radius:14px;padding:24px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+  }
+  .flip-card-front{background:var(--crema-2);border:1px solid rgba(122,27,43,0.15);}
+  .flip-card-front .foto{
+    /* AQUÍ VA LA FOTO DEL PONENTE O LOGO DE LA EMPRESA (proporcionado por Relaciones Exteriores), borra las comillas y pega el link de la imagen */
+    width:90px;height:90px;border-radius:50%;background:var(--azul);
+    margin-bottom:14px;
+  }
+  .flip-card-front h4{font-size:17px;color:var(--guinda);margin-bottom:4px;}
+  .flip-card-front p{font-size:13px;color:var(--texto-secundario);}
+  .flip-card-back{
+    background:var(--azul-dark);color:#fff;transform:rotateY(180deg);
+  }
+  .flip-card-back p{font-size:13px;margin-bottom:10px;color:#E4EAF2;}
+  .flip-card-back a{
+    /* AQUÍ VA EL LINK DE LINKEDIN DEL PONENTE O WEB DEL SPONSOR, borra las comillas y pega la URL */
+    color:var(--dorado);font-size:13px;text-decoration:underline;
+  }
+
+  /* ===== INSCRIPCIÓN ===== */
+  .planes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .plan-card{
+    background:var(--crema-2);border-radius:16px;padding:32px 26px;
+    border:2px solid rgba(122,27,43,0.12);text-align:center;position:relative;
+  }
+  .plan-card.destacado{border-color:var(--dorado);transform:translateY(-10px);}
+  .plan-card h3{font-size:20px;color:var(--azul-dark);margin-bottom:6px;}
+  .plan-precio{font-size:36px;font-weight:700;color:var(--guinda);font-family:'Barlow Semi Condensed',sans-serif;margin:10px 0;}
+  .plan-precio span{font-size:14px;color:var(--texto-secundario);font-weight:400;}
+  .coming-soon{
+    display:inline-block;background:var(--dorado);color:#4A3A0A;
+    font-size:11px;font-weight:600;padding:4px 12px;border-radius:12px;
+    text-transform:uppercase;letter-spacing:0.5px;margin-bottom:14px;
+  }
+  .plan-card .btn-primario{width:100%;margin-top:16px;}
+
+  /* ===== FOOTER ===== */
+  footer{
+    background:var(--azul-dark);color:#E4EAF2;padding:60px 40px 30px;
+    text-align:center;
+  }
+  footer .footer-logos{display:flex;justify-content:center;align-items:center;gap:20px;margin-bottom:24px;}
+  footer .footer-logos img{height:44px;background:#fff;border-radius:10px;padding:8px 14px;}
+  footer .hashtag{font-family:'League Spartan',sans-serif;font-weight:600;font-size:16px;color:var(--dorado);margin-bottom:20px;}
+  .redes{display:flex;justify-content:center;gap:16px;margin-bottom:24px;}
+  .redes a{
+    /* AQUÍ VAN LOS LINKS REALES DE CADA RED SOCIAL, borra las comillas y pega la URL correspondiente */
+    width:40px;height:40px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    color:#fff;text-decoration:none;transition:background 0.2s,transform 0.2s;
+  }
+  .redes a:hover{background:var(--dorado);transform:translateY(-3px);}
+  .redes a svg{width:18px;height:18px;fill:currentColor;}
+  .contacto-info{font-size:13px;color:#B9C4D6;margin-bottom:20px;}
+  .whatsapp-flotante{
+    /* AQUÍ VA EL LINK DE WHATSAPP CUANDO RRHH LO CONFIRME (mientras tanto, dejar oculto o con "Próximamente") */
+    position:fixed;bottom:24px;right:24px;background:#25D366;color:#fff;
+    width:56px;height:56px;border-radius:50%;display:flex;align-items:center;
+    justify-content:center;text-decoration:none;font-size:12px;text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  @media(max-width:768px){
+    .ejes-grid,.cards-grid,.planes-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:40px;}
+    section{padding:50px 20px;}
+    .plan-card.destacado{transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logos">
+    <img src="assets/img/logos/logo-uni.png" alt="Logo UNI">
+    <img src="assets/img/logos/logo-git-negro.png" alt="Logo GIT Construcción UNI">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#que-es-git">¿Qué es GIT?</a></li>
+    <li><a href="#cronograma">Cronograma</a></li>
+    <li><a href="#ponentes">Ponentes</a></li>
+    <li><a href="#sponsors">Sponsors</a></li>
+    <li><a href="#inscripcion">Inscripción</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" style="padding-top:70px;">
+  <span class="hero-badge">150 años UNI &middot; 29-31 octubre 2026</span>
+  <div class="hero-mascota">
+    <img src="assets/img/mascota/poster-git-week.png" alt="Poster 2do GIT Week 2026">
+  </div>
+  <h1>2º GIT <span>WEEK</span></h1>
+  <p class="lema">#ConstruyendoOportunidades</p>
+  <p class="desc">BIM · LEAN · VDC · PMI — tres días de talleres, masterclass y networking con la comunidad de construcción de la UNI.</p>
+
+  <div class="countdown" id="countdown">
+    <div class="item"><div class="num" id="cd-dias">--</div><div class="label">Días</div></div>
+    <div class="item"><div class="num" id="cd-horas">--</div><div class="label">Horas</div></div>
+    <div class="item"><div class="num" id="cd-min">--</div><div class="label">Min</div></div>
+    <div class="item"><div class="num" id="cd-seg">--</div><div class="label">Seg</div></div>
+  </div>
+
+  <a href="#inscripcion" class="btn-primario">Ver planes de inscripción</a>
+</section>
+
+<!-- ===== QUÉ ES GIT ===== -->
+<section id="que-es-git">
+  <p class="section-eyebrow">Sobre el evento</p>
+  <h2>¿Qué es GIT?</h2>
+  <p class="section-desc">GIT Construcción UNI reúne a estudiantes y profesionales alrededor de cuatro ejes clave de la industria de la construcción moderna.</p>
+
+  <div class="ejes-grid">
+    <div class="eje-card"><div class="eje-icono-box"><img class="icono" src="assets/img/iconos/icono-bim.png" alt="Icono BIM"></div><h3>BIM</h3><p>Modelado de información de construcción</p></div>
+    <div class="eje-card"><div class="eje-icono-box"><img class="icono icono-md" src="assets/img/iconos/icono-lean.png" alt="Icono LEAN"></div><h3>LEAN</h3><p>Gestión eficiente de proyectos</p></div>
+    <div class="eje-card"><div class="eje-icono-box"><img class="icono icono-grande" src="assets/img/iconos/icono-vdc.png" alt="Icono Team VDC"></div><h3>VDC</h3><p>Diseño y construcción virtual</p></div>
+    <div class="eje-card"><div class="eje-icono-box"><img class="icono icono-md" src="assets/img/iconos/icono-pmi.png" alt="Icono PMI"></div><h3>PMI</h3><p>Gestión de proyectos con estándar internacional</p></div>
+  </div>
+
+  <div class="video-institucional">
+    <h3>Conoce más sobre GIT</h3>
+    <div class="video-placeholder">
+      <video controls preload="metadata" style="width:100%;height:100%;border-radius:10px;">
+        <source src="assets/video/video-institucional.mp4" type="video/mp4">
+        Tu navegador no soporta el video. <a href="assets/video/video-institucional.mp4">Descárgalo aquí</a>.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CRONOGRAMA ===== -->
+<section id="cronograma" style="background:var(--crema-2);border-radius:20px;">
+  <p class="section-eyebrow">Programa</p>
+  <h2>Cronograma</h2>
+  <p class="section-desc">Actividades del 29 al 31 de octubre, organizadas en tres bloques. Algunas actividades están disponibles según el plan de inscripción.</p>
+
+  <div class="cronograma-dias" id="dia-tabs">
+    <div class="dia-tab activo" data-dia="29">Jueves 29</div>
+    <div class="dia-tab" data-dia="30">Viernes 30</div>
+    <div class="dia-tab" data-dia="31">Sábado 31</div>
+  </div>
+
+  <!-- BLOQUE 1: Actividades institucionales -->
+  <div class="cronograma-bloque">
+    <h3 class="bloque-titulo">Actividades institucionales</h3>
+    <div class="cronograma-lista" data-tipo="institucional" data-dia-actual="29"></div>
+  </div>
+
+  <!-- BLOQUE 2: Ponencias y paneles -->
+  <div class="cronograma-bloque">
+    <h3 class="bloque-titulo">Ponencias y paneles</h3>
+    <div class="cronograma-lista" data-tipo="ponencias" data-dia-actual="29"></div>
+  </div>
+
+  <!-- BLOQUE 3: Concursos -->
+  <div class="cronograma-bloque">
+    <h3 class="bloque-titulo">Concursos</h3>
+    <div class="cronograma-lista" data-tipo="concursos" data-dia-actual="29"></div>
+  </div>
+</section>
+
+<!-- ===== PONENTES ===== -->
+<section id="ponentes">
+  <p class="section-eyebrow">Speakers</p>
+  <h2>Ponentes</h2>
+  <p class="section-desc">Pasa el cursor o toca la tarjeta para conocer más de cada ponente.</p>
+
+  <div class="cards-grid">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="foto">
+            <!-- AQUÍ VA LA FOTO DEL PONENTE, borra las comillas y pega el link -->
+          </div>
+          <h4>Nombre del ponente</h4>
+          <p>Cargo / Empresa</p>
+        </div>
+        <div class="flip-card-back">
+          <p>Bio corta del ponente y tema de su masterclass o taller.</p>
+          <a href="">Ver LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <!-- Duplicar este bloque .flip-card por cada ponente confirmado -->
+  </div>
+</section>
+
+<!-- ===== SPONSORS ===== -->
+<section id="sponsors" style="background:var(--crema-2);border-radius:20px;">
+  <p class="section-eyebrow">Empresas aliadas</p>
+  <h2>Sponsors</h2>
+  <p class="section-desc">Empresas y organizaciones que hacen posible el 2º GIT Week.</p>
+
+  <div class="cards-grid">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="foto">
+            <!-- AQUÍ VA EL LOGO DE LA EMPRESA SPONSOR, borra las comillas y pega el link -->
+          </div>
+          <h4>Nombre de la empresa</h4>
+          <p>Categoría de sponsor</p>
+        </div>
+        <div class="flip-card-back">
+          <p>Descripción corta de la empresa proporcionada por Relaciones Exteriores.</p>
+          <a href="">Visitar sitio web</a>
+        </div>
+      </div>
+    </div>
+    <!-- Duplicar este bloque .flip-card por cada sponsor confirmado -->
+  </div>
+</section>
+
+<!-- ===== INSCRIPCIÓN ===== -->
+<section id="inscripcion">
+  <p class="section-eyebrow">Regístrate</p>
+  <h2>Planes de inscripción</h2>
+  <p class="section-desc">Elige el plan que más se ajuste a lo que quieres vivir en el GIT Week 2026.</p>
+
+  <div class="planes-grid">
+    <div class="plan-card">
+      <span class="coming-soon">Próximamente</span>
+      <h3>Entrada Libre</h3>
+      <div class="plan-precio">S/ -- <span>/ persona</span></div>
+      <p style="font-size:13px;color:var(--texto-secundario);">Acceso a ceremonias y actividades generales</p>
+      <a href="" class="btn-primario">Inscribirme</a>
+    </div>
+    <div class="plan-card destacado">
+      <span class="coming-soon">Próximamente</span>
+      <h3>Normal</h3>
+      <div class="plan-precio">S/ -- <span>/ persona</span></div>
+      <p style="font-size:13px;color:var(--texto-secundario);">Incluye talleres y visita técnica</p>
+      <a href="" class="btn-primario">Inscribirme</a>
+    </div>
+    <div class="plan-card">
+      <span class="coming-soon">Próximamente</span>
+      <h3>Premium</h3>
+      <div class="plan-precio">S/ -- <span>/ persona</span></div>
+      <p style="font-size:13px;color:var(--texto-secundario);">Acceso completo + masterclass exclusivas</p>
+      <a href="" class="btn-primario">Inscribirme</a>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--texto-secundario);margin-top:24px;text-align:center;">
+    <!-- El botón "Inscribirme" debe enlazar al formulario de inscripción que redirige al grupo de WhatsApp tras el pago -->
+    * El formulario de inscripción se conecta con el grupo de WhatsApp una vez confirmado el pago (a cargo de Logística).
+  </p>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contacto">
+  <div class="footer-logos">
+    <img src="assets/img/logos/logo-uni.png" alt="Logo UNI">
+    <img src="assets/img/logos/logo-git-negro.png" alt="Logo GIT">
+  </div>
+  <p class="hashtag">#ConstruyendoOportunidades</p>
+  <div class="redes">
+    <a href="https://www.facebook.com/gitconstruccion.uni" title="Facebook" target="_blank"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12"/></svg></a>
+    <a href="https://www.instagram.com/gitconstruccion.uni/" title="Instagram" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.1 0 4.1.1 1.1.1 1.8.2 2.5.5.7.3 1.2.6 1.8 1.2.6.6.9 1.1 1.2 1.8.3.7.4 1.4.5 2.5.1 1 .1 1.4.1 4.1s0 3.1-.1 4.1c-.1 1.1-.2 1.8-.5 2.5-.3.7-.6 1.2-1.2 1.8-.6.6-1.1.9-1.8 1.2-.7.3-1.4.4-2.5.5-1 .1-1.4.1-4.1.1s-3.1 0-4.1-.1c-1.1-.1-1.8-.2-2.5-.5-.7-.3-1.2-.6-1.8-1.2-.6-.6-.9-1.1-1.2-1.8-.3-.7-.4-1.4-.5-2.5C2 15.1 2 14.7 2 12s0-3.1.1-4.1c.1-1.1.2-1.8.5-2.5.3-.7.6-1.2 1.2-1.8.6-.6 1.1-.9 1.8-1.2.7-.3 1.4-.4 2.5-.5C8.9 2 9.3 2 12 2m0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10m0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4M17.4 5.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4"/></svg></a>
+    <a href="https://www.youtube.com/@gitconstruccion-uni" title="YouTube" target="_blank"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8M9.6 15.6V8.4l6.3 3.6z"/></svg></a>
+    <a href="https://www.linkedin.com/company/git-construcci%C3%B3n-uni/posts/?feedView=all" title="LinkedIn" target="_blank"><svg viewBox="0 0 24 24"><path d="M20.4 20.4h-3.5v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.6H9.4V9h3.4v1.6h.1c.5-.9 1.7-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5zM5.3 7.4a2 2 0 1 1 0-4 2 2 0 0 1 0 4M7 20.4H3.6V9H7zM22.2 0H1.8C.8 0 0 .8 0 1.8v20.4C0 23.2.8 24 1.8 24h20.4c1 0 1.8-.8 1.8-1.8V1.8C24 .8 23.2 0 22.2 0"/></svg></a>
+  </div>
+  <p class="contacto-info">
+    <a href="mailto:gitconstruccion@uni.edu.pe" style="color:#E4EAF2;text-decoration:underline;">gitconstruccion@uni.edu.pe</a> &middot; Lima, Perú
+  </p>
+  <p style="font-size:12px;color:#7C8AA0;">© 2026 GIT Construcción UNI. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Botón flotante de WhatsApp: descomentar cuando RRHH confirme el número -->
+<!--
+<a href="https://wa.me/51XXXXXXXXX" class="whatsapp-flotante" target="_blank">WhatsApp</a>
+-->
+
+<script>
+  // Countdown regresivo al 29 de octubre 2026, 00:00
+  const fechaEvento = new Date("2026-10-29T00:00:00").getTime();
+  function actualizarCountdown(){
+    const ahora = new Date().getTime();
+    const diff = fechaEvento - ahora;
+    if(diff < 0){
+      document.getElementById("countdown").innerHTML = "<p>¡El evento ya comenzó!</p>";
+      return;
+    }
+    const dias = Math.floor(diff / (1000*60*60*24));
+    const horas = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    const min = Math.floor((diff % (1000*60*60)) / (1000*60));
+    const seg = Math.floor((diff % (1000*60)) / 1000);
+    document.getElementById("cd-dias").textContent = dias;
+    document.getElementById("cd-horas").textContent = horas;
+    document.getElementById("cd-min").textContent = min;
+    document.getElementById("cd-seg").textContent = seg;
+  }
+  actualizarCountdown();
+  setInterval(actualizarCountdown, 1000);
+
+  // ===== DATOS DEL CRONOGRAMA =====
+  // Basado en cronograma_git.txt. Plan: "libre" | "normal" | "premium" (ajustar cuando Logística confirme los beneficios reales de cada plan)
+  const cronogramaData = {
+    institucional: [
+      {dia:"29", hora:"8:00 - 12:00", nombre:"Visita técnica masiva", plan:"normal"},
+      {dia:"29", hora:"14:00 - 15:00", nombre:"Ceremonia de inauguración", plan:"libre"},
+      {dia:"30", hora:"9:00 - 12:00", nombre:"Workshop de constructoras / softwares / capacitadoras", plan:"normal"},
+      {dia:"30", hora:"14:00 - 16:00", nombre:"Workshop de constructoras / softwares / capacitadoras", plan:"normal"},
+      {dia:"31", hora:"10:30 - 12:00", nombre:"Ceremonia de premiación", plan:"libre"}
+    ],
+    ponencias: [
+      {dia:"29", hora:"15:30 - 17:30", nombre:"Masterclass BIM/VDC", plan:"premium"},
+      {dia:"29", hora:"18:00 - 20:00", nombre:"Taller BIM/VDC", plan:"premium"},
+      {dia:"30", hora:"8:30 - 10:30", nombre:"Masterclass PMI + IA en la construcción", plan:"premium"},
+      {dia:"30", hora:"15:30 - 17:30", nombre:"Masterclass Lean + C/O", plan:"premium"},
+      {dia:"30", hora:"18:00 - 20:00", nombre:"Taller Lean + C/O", plan:"premium"},
+      {dia:"31", hora:"9:00 - 10:30", nombre:"Taller de empleabilidad", plan:"normal"}
+    ],
+    concursos: [
+      {dia:"29", hora:"15:00 - 18:00", nombre:"Concurso nacional de metrados y costos", plan:"normal"},
+      {dia:"30", hora:"15:00 - 18:30", nombre:"Concurso de ponencias estudiantiles", plan:"normal"}
+    ]
+  };
+
+  const badgeClase = {libre:"badge-libre", normal:"badge-normal", premium:"badge-premium"};
+  const badgeTexto = {libre:"Libre", normal:"Normal", premium:"Premium"};
+
+  function renderCronograma(diaSeleccionado){
+    document.querySelectorAll(".cronograma-lista").forEach(contenedor=>{
+      const tipo = contenedor.dataset.tipo;
+      const actividades = cronogramaData[tipo].filter(a => a.dia === diaSeleccionado);
+      contenedor.innerHTML = actividades.map(a => `
+        <div class="actividad-row">
+          <span class="hora">${a.hora}</span>
+          <span class="nombre">${a.nombre}</span>
+          <span class="badge-plan ${badgeClase[a.plan]}">${badgeTexto[a.plan]}</span>
+        </div>
+      `).join("");
+    });
+  }
+
+  // Tabs de días: cambia el día activo y vuelve a pintar los 3 bloques
+  document.querySelectorAll(".dia-tab").forEach(tab=>{
+    tab.addEventListener("click", ()=>{
+      document.querySelectorAll(".dia-tab").forEach(t=>t.classList.remove("activo"));
+      tab.classList.add("activo");
+      renderCronograma(tab.dataset.dia);
+    });
+  });
+
+  renderCronograma("29"); // Día inicial al cargar la página
+</script>
+
+</body>
+</html>
