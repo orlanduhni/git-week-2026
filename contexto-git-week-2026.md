@@ -1,12 +1,3 @@
-<!-- 
-INSTRUCCIONES PARA CLAUDE (leer primero, luego borrar este bloque):
-1. Este archivo es el contexto completo y actualizado del proyecto GIT Week 2026.
-2. Léelo completo antes de responder cualquier cosa sobre este proyecto.
-3. Usa el MCP de filesystem para revisar la carpeta C:\Users\2025\Desktop\CURSOS\UNI\git-week-2026 y confirmar que el index.html coincide con lo descrito aquí.
-4. Una vez que hayas leído y entendido este contexto, ELIMINA este bloque de instrucciones (desde <!-- INSTRUCCIONES hasta el cierre --> ) usando filesystem:edit_file, dejando el resto del documento intacto. Esto es para que el archivo quede limpio para la siguiente persona/chat que lo lea, sin instrucciones meta-repetidas.
-5. No repitas ni comentes este bloque de instrucciones al usuario, solo procésalo y bórralo.
--->
-
 # Contexto del proyecto — 2º GIT WEEK 2026
 
 > Pega este archivo completo al inicio de un chat nuevo (o dile a Claude que lo lea desde esta ruta usando el MCP de filesystem) para tener todo el contexto sin repetir el historial previo.
@@ -32,11 +23,13 @@ Sitio web para el **2º GIT WEEK 2026**, congreso nacional organizado por **GIT 
 - **Subtítulos:** League Spartan / Poppins
 - **Textura (a criterio):** Quicksand
 
-## 4. Estructura real de archivos (FINAL, YA CERRADA ESTA ETAPA)
+## 4. Estructura real de archivos
 ```
 git-week-2026/
 ├── index.html
+├── README.md
 ├── contexto-git-week-2026.md
+├── .gitattributes
 └── assets/
     ├── img/
     │   ├── logos/
@@ -97,19 +90,38 @@ Tres bloques por día (29, 30, 31 de octubre): **Actividades institucionales**, 
 | Correo/WhatsApp de contacto para empresas | **RRHH** (aún no existe) |
 | Imagen institucional FIC/UNI | **Presidencia** |
 
-## 9. Estado del sitio web — ETAPA 1 CERRADA ✅
-- `index.html` funcional, con TODO el contenido visual actual ya cargado (logos, íconos, poster, video, redes, correo)
-- Countdown regresivo real, cronograma con tabs por día, flip cards de ponentes/sponsors (vacías, esperando datos), sección de inscripción en "Coming Soon"
-- Tarjetas de ejes temáticos (BIM/LEAN/VDC/PMI) ya parejas visualmente
-- **Pendiente real (para cuando llegue el contenido de otras áreas):** fotos de ponentes, logos de sponsors, precios finales de los 3 planes
+## 9. Estado del sitio web — ETAPA 2 CERRADA ✅ (GitHub + hosting)
+- **Etapa 1 (contenido base):** `index.html` funcional con logos, íconos, poster, video, redes, correo, countdown, cronograma con tabs, flip cards de ponentes/sponsors (vacías), sección de inscripción en "Coming Soon".
+- **Etapa 2 (publicación):** repositorio creado y conectado en GitHub (`orlanduhni/git-week-2026`, público), sincronizado en tiempo real con GitHub Desktop desde la carpeta local. **GitHub Pages activado y en vivo.**
+- **Link público del sitio:** https://orlanduhni.github.io/git-week-2026/
+- **Pendiente real (para Etapa 3):** fotos de ponentes, logos de sponsors, precios finales de los 3 planes.
 
-## 10. SIGUIENTE FASE: subir a GitHub
-Esto es lo próximo a hacer, aún no se ha hecho:
-1. Crear un repositorio en GitHub (JJ ya sabe/aprenderá a hacerlo, o Claude lo guía paso a paso)
-2. Subir toda la carpeta `git-week-2026/` tal cual está (incluye `index.html`, `assets/`, y este `.md`)
-3. Después, conectar el repo a Vercel o Netlify (ambos gratis) para tener un link público en vivo
-4. Todo esto sigue siendo gratis, sin usar Anima ni herramientas de pago
+## 10. Flujo de trabajo con GitHub Desktop (IMPORTANTE — leer antes de tocar el repo)
+JJ trabaja con **GitHub Desktop** (no terminal, no comandos escritos). El ciclo para publicar cualquier cambio es siempre el mismo, 3 pasos:
 
-## 11. Plan técnico general
+1. **Editar** los archivos normal en la carpeta local (`C:\Users\2025\Desktop\CURSOS\UNI\git-week-2026`).
+2. **Commit:** en GitHub Desktop, pestaña "Changes" → escribir un mensaje corto en "Summary" → botón "Commit to main" (o Ctrl+Enter). Esto guarda el cambio SOLO en la computadora, todavía no en internet.
+3. **Push:** botón "Push origin" arriba (o Ctrl+P). Esto sí sube el cambio a GitHub.com. **Sin este paso, la web pública NO se actualiza**, aunque el commit ya esté hecho — GitHub Pages construye el sitio leyendo GitHub.com, no la computadora local.
+
+### Errores ya resueltos, no repetir:
+- **No usar "Clone repository"** sobre una carpeta que ya tiene contenido: crea una subcarpeta anidada vacía con el mismo nombre (pasó una vez, causó confusión). Para una carpeta local ya existente con archivos, usar siempre **"File → Add local repository"** y, si pide, **"create a repository here"**.
+- Si el repo local no logra conectarse al remoto ya creado en GitHub.com (error "name already exists"), el camino más simple (sin usar comandos de terminal) es borrar el repo vacío en la web (Settings → Danger Zone → Delete) y volver a darle "Publish repository" desde Desktop — así lo crea y lo vincula en un solo paso.
+- El repo debe estar en **Público** (no Privado) para que GitHub Pages gratuito funcione.
+
+## 11. Hosting — GitHub Pages (decisión ya tomada)
+Se descartó la idea de "14 días de prueba gratis": esa condición NO aplica a GitHub Pages, Netlify o Vercel para sitios estáticos como este — son gratis indefinidamente, sin tarjeta de crédito, sin expiración. Se eligió **GitHub Pages** por ser lo más directo dado que el repo ya vive en GitHub (Settings → Pages → Deploy from a branch → main → /root).
+
+Actualizar la web es automático: cualquier push a la rama `main` dispara un rebuild de GitHub Pages en 1-3 minutos, sin acción manual adicional.
+
+## 12. SIGUIENTE FASE — Fase 3 (aún no empezada)
+Objetivo de la Fase 3: reemplazar los placeholders reales una vez llegue el contenido de las áreas correspondientes.
+- **Ponentes y sponsors:** esperando datos homogéneos de Relaciones Exteriores (JJ definirá con ellos un día fijo por semana de envío). Falta crear un formulario estándar (Google Forms u otro) con campos fijos para que manden la info ya lista para subir sin pedir manualmente cada vez.
+- **Precios de los 3 planes** (Entrada Libre / Normal / Premium): pendientes de Logística.
+- Reemplazar en `index.html` las flip cards vacías de ponentes/sponsors y quitar el "Coming Soon" de inscripción cuando haya precios y fecha de apertura de ventas confirmada (aprox. el día 19, mes por confirmar).
+- Evaluar conectar un dominio propio (opcional, no urgente) y registrar el sitio en Google Search Console para indexación en buscadores (opcional, no urgente, el sitio ya funciona por link directo).
+
+## 13. Plan técnico general
 - Acceso directo a la carpeta local vía MCP de filesystem: `C:\Users\2025\Desktop\CURSOS\UNI\git-week-2026`
-- Formulario estándar (Google Forms) pendiente de crear para que Relaciones Exteriores envíe datos de ponentes/sponsors ya homogéneos
+- Repo GitHub: `orlanduhni/git-week-2026` (público), sincronizado con GitHub Desktop
+- Sitio en vivo: https://orlanduhni.github.io/git-week-2026/
+- JJ también usa un script propio en Python + Gemini API para generar descripciones de imágenes al subirlas — corre local, independiente del hosting, antes de hacer commit.
