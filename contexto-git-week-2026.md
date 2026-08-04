@@ -72,9 +72,14 @@ Ya NO es un link a Drive. Está embebido directo con `<video controls>` apuntand
 ## 6. Paquetes de inscripción
 | Plan | Precio | Estado |
 |---|---|---|
-| Entrada Libre | Por confirmar (Logística) | Nombre definitivo |
-| Normal | Por confirmar (Logística) | Nombre definitivo |
-| Premium | Por confirmar (Logística) | Nombre definitivo |
+| 🔵 General | Por confirmar (Logística) | Nombre definitivo (actualizado, reemplaza a "Entrada Libre") |
+| 🟡 Professional | Por confirmar (Logística) | Nombre definitivo (actualizado, reemplaza a "Normal"), destacado visualmente en la web |
+| 🔴 Executive | Por confirmar (Logística) | Nombre definitivo (actualizado, reemplaza a "Premium") |
+
+Descripciones ya cargadas en el HTML:
+- **General:** Acceso a ceremonias, feria empresarial y masterclass.
+- **Professional:** Incluye todo lo del plan General, Kit de Bienvenida y taller de empleabilidad.
+- **Executive:** Incluye acceso completo, visita técnica, networking preferencial y beneficios especiales.
 
 Ventas no se muestran hasta aprox. el 19 (mes por confirmar). Sección en "Coming Soon". El botón de inscripción llevará a un formulario que redirige a un grupo de WhatsApp tras el pago (gestión de Logística) — sin lógica de login/desbloqueo por ahora.
 

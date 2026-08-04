@@ -170,9 +170,9 @@
     font-size:11px;font-weight:600;padding:5px 12px;border-radius:14px;
     text-transform:uppercase;letter-spacing:0.5px;
   }
-  .badge-libre{background:#DCE9DC;color:#2E5E2E;}
-  .badge-normal{background:#D7E4F2;color:#1D4E89;}
-  .badge-premium{background:#F3E4C0;color:#8A6D1A;}
+  .badge-libre{background:#D7E4F2;color:#1D4E89;}
+  .badge-normal{background:#FBE8B0;color:#8A6D1A;}
+  .badge-premium{background:#F3C4C4;color:#8A1F1F;}
 
   /* ===== PONENTES / SPONSORS - FLIP CARDS ===== */
   .cards-grid{
@@ -410,23 +410,23 @@
   <div class="planes-grid">
     <div class="plan-card">
       <span class="coming-soon">Próximamente</span>
-      <h3>Entrada Libre</h3>
+      <h3>🔵 General</h3>
       <div class="plan-precio">S/ -- <span>/ persona</span></div>
-      <p style="font-size:13px;color:var(--texto-secundario);">Acceso a ceremonias y actividades generales</p>
+      <p style="font-size:13px;color:var(--texto-secundario);">Acceso a ceremonias, feria empresarial y masterclass</p>
       <a href="" class="btn-primario">Inscribirme</a>
     </div>
     <div class="plan-card destacado">
       <span class="coming-soon">Próximamente</span>
-      <h3>Normal</h3>
+      <h3>🟡 Professional</h3>
       <div class="plan-precio">S/ -- <span>/ persona</span></div>
-      <p style="font-size:13px;color:var(--texto-secundario);">Incluye talleres y visita técnica</p>
+      <p style="font-size:13px;color:var(--texto-secundario);">Incluye todo lo del plan General, Kit de Bienvenida y taller de empleabilidad</p>
       <a href="" class="btn-primario">Inscribirme</a>
     </div>
     <div class="plan-card">
       <span class="coming-soon">Próximamente</span>
-      <h3>Premium</h3>
+      <h3>🔴 Executive</h3>
       <div class="plan-precio">S/ -- <span>/ persona</span></div>
-      <p style="font-size:13px;color:var(--texto-secundario);">Acceso completo + masterclass exclusivas</p>
+      <p style="font-size:13px;color:var(--texto-secundario);">Incluye acceso completo, visita técnica, networking preferencial y beneficios especiales</p>
       <a href="" class="btn-primario">Inscribirme</a>
     </div>
   </div>
@@ -486,28 +486,28 @@
   // Basado en cronograma_git.txt. Plan: "libre" | "normal" | "premium" (ajustar cuando Logística confirme los beneficios reales de cada plan)
   const cronogramaData = {
     institucional: [
-      {dia:"29", hora:"8:00 - 12:00", nombre:"Visita técnica masiva", plan:"normal"},
+      {dia:"29", hora:"8:00 - 12:00", nombre:"Visita técnica masiva (colegio)", plan:"normal"},
       {dia:"29", hora:"14:00 - 15:00", nombre:"Ceremonia de inauguración", plan:"libre"},
       {dia:"30", hora:"9:00 - 12:00", nombre:"Workshop de constructoras / softwares / capacitadoras", plan:"normal"},
       {dia:"30", hora:"14:00 - 16:00", nombre:"Workshop de constructoras / softwares / capacitadoras", plan:"normal"},
       {dia:"31", hora:"10:30 - 12:00", nombre:"Ceremonia de premiación", plan:"libre"}
     ],
     ponencias: [
-      {dia:"29", hora:"15:30 - 17:30", nombre:"Masterclass BIM/VDC", plan:"premium"},
-      {dia:"29", hora:"18:00 - 20:00", nombre:"Taller BIM/VDC", plan:"premium"},
-      {dia:"30", hora:"8:30 - 10:30", nombre:"Masterclass PMI + IA en la construcción", plan:"premium"},
-      {dia:"30", hora:"15:30 - 17:30", nombre:"Masterclass Lean + C/O", plan:"premium"},
-      {dia:"30", hora:"18:00 - 20:00", nombre:"Taller Lean + C/O", plan:"premium"},
-      {dia:"31", hora:"9:00 - 10:30", nombre:"Taller de empleabilidad", plan:"normal"}
+      {dia:"29", hora:"16:00 - 18:00", nombre:"Masterclass VDC / IPD", plan:"premium"},
+      {dia:"29", hora:"18:30 - 20:00", nombre:"Masterclass BIM", plan:"premium"},
+      {dia:"30", hora:"8:30 - 10:30", nombre:"Masterclass PMI", plan:"premium"},
+      {dia:"30", hora:"16:00 - 18:00", nombre:"Masterclass Lean en Provincia", plan:"premium"},
+      {dia:"30", hora:"18:30 - 20:00", nombre:"Masterclass Modern Construction", plan:"premium"},
+      {dia:"31", hora:"8:30 - 10:30", nombre:"Taller de empleabilidad", plan:"normal"}
     ],
     concursos: [
-      {dia:"29", hora:"15:00 - 18:00", nombre:"Concurso nacional de metrados y costos", plan:"normal"},
-      {dia:"30", hora:"15:00 - 18:30", nombre:"Concurso de ponencias estudiantiles", plan:"normal"}
+      {dia:"30", hora:"15:00 - 18:00", nombre:"Concurso LEAN (organizado por LSN)", plan:"normal"},
+      {dia:"31", hora:"15:00 - 18:00", nombre:"Concurso de ponencias estudiantiles (Categoría A y B)", plan:"normal"}
     ]
   };
 
   const badgeClase = {libre:"badge-libre", normal:"badge-normal", premium:"badge-premium"};
-  const badgeTexto = {libre:"Libre", normal:"Normal", premium:"Premium"};
+  const badgeTexto = {libre:"General", normal:"Professional", premium:"Executive"};
 
   function renderCronograma(diaSeleccionado){
     document.querySelectorAll(".cronograma-lista").forEach(contenedor=>{
