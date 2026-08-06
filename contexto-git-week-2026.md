@@ -3,7 +3,7 @@
 > Pega este archivo completo al inicio de un chat nuevo (o dile a Claude que lo lea desde esta ruta usando el MCP de filesystem) para tener todo el contexto sin repetir el historial previo.
 
 ## 1. Qué es el proyecto
-Sitio web para el **2º GIT WEEK 2026**, congreso nacional organizado por **GIT Construcción UNI** (Universidad Nacional de Ingeniería), en el marco del **150 aniversario de la UNI**. JJ coordina el desarrollo web, dependiendo de contenido de dos áreas: **Marketing** (identidad visual, difusión) y **Relaciones Exteriores** (ponentes, sponsors).
+Sitio web para el **2º GIT WEEK 2026**, congreso nacional organizado por **GIT Construcción UNI** (Universidad Nacional de Ingeniería), en el marco del **150 aniversario de la UNI**. JJ coordina el desarrollo web, dependiendo de contenido de dos áreas: **Marketing** (identidad visual, difusión) y **Relaciones c Exteriores** (ponentes, sponsors).
 
 ## 2. Datos del evento
 - **Nombre oficial:** 2º GIT WEEK 2026
