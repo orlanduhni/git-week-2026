@@ -183,7 +183,8 @@
     position:relative;width:100%;height:100%;text-align:center;
     transition:transform 0.6s;transform-style:preserve-3d;cursor:pointer;
   }
-  .flip-card:hover .flip-card-inner{transform:rotateY(180deg);}
+  .flip-card:hover .flip-card-inner,
+  .flip-card.is-flipped .flip-card-inner{transform:rotateY(180deg);}
   .flip-card-front,.flip-card-back{
     position:absolute;width:100%;height:100%;-webkit-backface-visibility:hidden;
     backface-visibility:hidden;border-radius:14px;padding:24px;
@@ -197,6 +198,14 @@
   }
   .flip-card-front h4{font-size:17px;color:var(--guinda);margin-bottom:4px;}
   .flip-card-front p{font-size:13px;color:var(--texto-secundario);}
+  .badge-proximamente{
+    display:inline-block;margin-top:10px;background:rgba(201,162,75,0.18);
+    color:#8A6D1A;font-size:11px;font-weight:600;padding:4px 12px;
+    border-radius:12px;letter-spacing:0.3px;
+  }
+  .flip-card-back .badge-proximamente{
+    background:rgba(255,255,255,0.12);color:var(--dorado);
+  }
   .flip-card-back{
     background:var(--azul-dark);color:#fff;transform:rotateY(180deg);
   }
@@ -375,16 +384,81 @@
           <div class="foto">
             <!-- AQUÍ VA LA FOTO DEL PONENTE, borra las comillas y pega el link -->
           </div>
-          <h4>Nombre del ponente</h4>
-          <p>Cargo / Empresa</p>
+          <h4>Ponente 1</h4>
+          <p>Cargo / Empresa (por confirmar)</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
         </div>
         <div class="flip-card-back">
-          <p>Bio corta del ponente y tema de su masterclass o taller.</p>
-          <a href="">Ver LinkedIn</a>
+          <p>Información del ponente próximamente.</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
         </div>
       </div>
     </div>
-    <!-- Duplicar este bloque .flip-card por cada ponente confirmado -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="foto">
+            <!-- AQUÍ VA LA FOTO DEL PONENTE, borra las comillas y pega el link -->
+          </div>
+          <h4>Ponente 2</h4>
+          <p>Cargo / Empresa (por confirmar)</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+        <div class="flip-card-back">
+          <p>Información del ponente próximamente.</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="foto">
+            <!-- AQUÍ VA LA FOTO DEL PONENTE, borra las comillas y pega el link -->
+          </div>
+          <h4>Ponente 3</h4>
+          <p>Cargo / Empresa (por confirmar)</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+        <div class="flip-card-back">
+          <p>Información del ponente próximamente.</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="foto">
+            <!-- AQUÍ VA LA FOTO DEL PONENTE, borra las comillas y pega el link -->
+          </div>
+          <h4>Ponente 4</h4>
+          <p>Cargo / Empresa (por confirmar)</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+        <div class="flip-card-back">
+          <p>Información del ponente próximamente.</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="foto">
+            <!-- AQUÍ VA LA FOTO DEL PONENTE, borra las comillas y pega el link -->
+          </div>
+          <h4>Ponente 5</h4>
+          <p>Cargo / Empresa (por confirmar)</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+        <div class="flip-card-back">
+          <p>Información del ponente próximamente.</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+      </div>
+    </div>
+    <!-- Duplicar este bloque .flip-card por cada ponente confirmado. Al llegar la info real de Relaciones Exteriores: reemplazar nombre, cargo, foto, bio y quitar los badges "Próximamente" -->
   </div>
 </section>
 
@@ -401,16 +475,81 @@
           <div class="foto">
             <!-- AQUÍ VA EL LOGO DE LA EMPRESA SPONSOR, borra las comillas y pega el link -->
           </div>
-          <h4>Nombre de la empresa</h4>
-          <p>Categoría de sponsor</p>
+          <h4>Empresa 1</h4>
+          <p>Categoría de sponsor (por confirmar)</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
         </div>
         <div class="flip-card-back">
-          <p>Descripción corta de la empresa proporcionada por Relaciones Exteriores.</p>
-          <a href="">Visitar sitio web</a>
+          <p>Información de la empresa próximamente.</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
         </div>
       </div>
     </div>
-    <!-- Duplicar este bloque .flip-card por cada sponsor confirmado -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="foto">
+            <!-- AQUÍ VA EL LOGO DE LA EMPRESA SPONSOR, borra las comillas y pega el link -->
+          </div>
+          <h4>Empresa 2</h4>
+          <p>Categoría de sponsor (por confirmar)</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+        <div class="flip-card-back">
+          <p>Información de la empresa próximamente.</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="foto">
+            <!-- AQUÍ VA EL LOGO DE LA EMPRESA SPONSOR, borra las comillas y pega el link -->
+          </div>
+          <h4>Empresa 3</h4>
+          <p>Categoría de sponsor (por confirmar)</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+        <div class="flip-card-back">
+          <p>Información de la empresa próximamente.</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="foto">
+            <!-- AQUÍ VA EL LOGO DE LA EMPRESA SPONSOR, borra las comillas y pega el link -->
+          </div>
+          <h4>Empresa 4</h4>
+          <p>Categoría de sponsor (por confirmar)</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+        <div class="flip-card-back">
+          <p>Información de la empresa próximamente.</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="foto">
+            <!-- AQUÍ VA EL LOGO DE LA EMPRESA SPONSOR, borra las comillas y pega el link -->
+          </div>
+          <h4>Empresa 5</h4>
+          <p>Categoría de sponsor (por confirmar)</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+        <div class="flip-card-back">
+          <p>Información de la empresa próximamente.</p>
+          <span class="badge-proximamente">🔒 Próximamente</span>
+        </div>
+      </div>
+    </div>
+    <!-- Duplicar este bloque .flip-card por cada sponsor confirmado. Al llegar la info real de Relaciones Exteriores: reemplazar nombre, categoría, logo, descripción y quitar los badges "Próximamente" -->
   </div>
 </section>
 
@@ -551,6 +690,43 @@
   });
 
   renderCronograma("29"); // Día inicial al cargar la página
+
+  // ===== FLIP CARDS: auto-volteo secuencial (ponentes / sponsors) =====
+  // Comportamiento pedido:
+  // - Los primeros 5s se ven todas las fotos.
+  // - Luego se voltea la 1ra tarjeta y se queda mostrando su descripción 8-10s.
+  // - Al cumplirse ese tiempo, esa tarjeta vuelve a mostrar la foto e INMEDIATAMENTE
+  //   se voltea la siguiente tarjeta, y así sucesivamente en bucle.
+  // - El hover / click manual sigue funcionando en cualquier momento (no se desactiva).
+  function initAutoFlip(gridSelector, opts){
+    const config = Object.assign({ delayInicial:5000, duracionVolteo:9000 }, opts || {});
+    const cards = Array.from(document.querySelectorAll(gridSelector + " .flip-card"));
+    if(cards.length === 0) return;
+
+    let indiceActual = 0;
+
+    function voltearSiguiente(){
+      cards.forEach(c => c.classList.remove("is-flipped"));
+      cards[indiceActual].classList.add("is-flipped");
+      indiceActual = (indiceActual + 1) % cards.length;
+    }
+
+    setTimeout(() => {
+      voltearSiguiente();
+      setInterval(voltearSiguiente, config.duracionVolteo);
+    }, config.delayInicial);
+  }
+
+  // 9000ms = 9s (dentro del rango 8-10s pedido). Ajustar aquí si se quiere otro tiempo.
+  initAutoFlip("#ponentes .cards-grid", { delayInicial: 5000, duracionVolteo: 5000 });
+  initAutoFlip("#sponsors .cards-grid", { delayInicial: 5000, duracionVolteo: 5000 });
+
+  // Click/touch manual: además del hover, permite voltear tocando la tarjeta (útil en celulares).
+  document.querySelectorAll(".flip-card").forEach(card => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("is-flipped");
+    });
+  });
 </script>
 
 </body>
